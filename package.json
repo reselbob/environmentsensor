@@ -1,0 +1,46 @@
+{
+  "name": "environmentsensor",
+  "version": "1.0.0",
+  "description": "A project that demonstrates how to get environment information from a computing device",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "build.watch": "tsc --build --watch",
+    "lint": "eslint .",
+    "start": "ts-node src/index.ts",
+    "test": "mocha --require ts-node/register tests/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reselbob/environmentsensor.git"
+  },
+  "dependencies": {
+    "@types/systeminformation": "^3.54.1",
+    "systeminformation": "^5.18.6"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.4.0",
+    "@tsconfig/node16": "^1.0.0",
+    "@types/chai": "^4.3.1",
+    "@types/intl": "^1.2.0",
+    "@types/lodash": "^4.14.195",
+    "@types/mocha": "^9.1.1",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "chai": "^4.3.6",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-deprecation": "^1.2.1",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2",
+    "uuid": "^9.0.0"
+  },
+  "author": "Bob Reselman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reselbob/environmentsensor/issues"
+  },
+  "homepage": "https://github.com/reselbob/environmentsensor#readme"
+}
