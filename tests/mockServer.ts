@@ -23,7 +23,7 @@ app.post("/", (req: any, res: any,) => {
     const data = req.body;
 
     const jsonString = JSON.stringify(data, null, 2);
-    console.log(JSON.stringify(jsonString));
+    console.log(jsonString);
 
     // Send a response back to the client
     res.send("OK");
