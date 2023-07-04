@@ -31,7 +31,8 @@ app.post("/", (req: any, res: any,) => {
 
 
 const server = app.listen(port, () => {
-    logger.info(`Mock server is running on port ${port} at ${new Date()}`);
+    const startup = {status: "RUNNING", message:`Mock server is running on port ${port} at ${new Date()}` }
+    logger.info(JSON.stringify(startup));
 });
 
 const shutdown = async () => {
