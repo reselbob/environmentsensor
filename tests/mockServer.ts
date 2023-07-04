@@ -22,8 +22,8 @@ app.post("/", (req: any, res: any,) => {
     // Get the JSON data from the request body
     const data = req.body;
 
-    // Do something with the data
-    console.log(JSON.stringify(data));
+    const jsonString = JSON.stringify(data, null, 2);
+    console.log(JSON.stringify(jsonString));
 
     // Send a response back to the client
     res.send("OK");
