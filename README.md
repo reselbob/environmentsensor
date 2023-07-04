@@ -7,7 +7,7 @@ This project has two components, a Dispatcher which gathers environment informat
 
 ## (1) Install the TypeScript runtime libraries
 
-`npm install -g typescript  && npm install -g ts-node`
+`sudo npm install -g typescript  && npm install -g ts-node`
 
 ## (2) Clone the source code
 
