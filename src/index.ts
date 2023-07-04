@@ -2,11 +2,17 @@ import {Systeminformation} from "systeminformation";
 import {DeviceInfo, TempData} from "./deviceInfo";
 import { URL } from 'url';
 import {Dispatcher} from "./dispatcher";
+import path from "path" ;
+
+//const dotenv = require('dotenv');
+
+//dotenv.config();
+require('dotenv').config({ path: path.join(__dirname, '../', '.env') })
 
 const GET_TEMP_INTERVAL_MILLISECONDS = process.env.GET_TEMP_INTERVAL_MILLISECONDS || "1000";
 const REPORT_TO_SERVER_INTERVAL_MILLISECONDS = process.env.REPORT_TO_SERVER_INTERVAL_MILLISECONDS || "5000";
 const GET_LAST_SLICE = process.env.GET_LAST_SLICE  || "3";
-const TARGET_URL = new URL(process.env.TARGET_URL  || "https://jsonplaceholder.typicode.com/posts");
+const TARGET_URL = new URL(process.env.TARGET_URL  || "http://localhost:8083");
 const data = new Array<TempData>();
 
 

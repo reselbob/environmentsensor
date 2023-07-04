@@ -9,7 +9,6 @@ interface DispatchParams {
 
 export class Dispatcher {
     static async dispatch({payload, targetUrl}: DispatchParams): Promise<void>{
-        async function postData() {
             try {
                 console.log('Posting:', payload);
                 const response = await axios.post(targetUrl.href, payload);
@@ -25,6 +24,5 @@ export class Dispatcher {
                     console.error('Error:', error);
                 }
             }
-        }
     };
 }
