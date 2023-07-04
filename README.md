@@ -15,4 +15,6 @@ A project that demonstrates how to get environment information from a computing 
 
 ## Start the Dispatcher that reports CPU Temperature data to the mock server
 
+Run the following command in a separate terminal window.
+
 `ts-node src/index.ts`
