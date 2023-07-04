@@ -1,7 +1,7 @@
-# environmentsensor
+# Environment Sensor
 A project that demonstrates how to get environment information from a computing device.
 
-This project has two components, a Dispatcher which gathers environment information and a MockServer to which the Dispatcher sends environment information for processing.
+This project has two components, a Dispatcher which gathers environment information and a MockServer to which the Dispatcher sends environment information for subsequent processing.
 
 **Be advised** that this code needs to run directly on a host machine in order to access temperature data.
 
