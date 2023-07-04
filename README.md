@@ -5,6 +5,10 @@ A project that demonstrates how to get environment information from a computing 
 
 `git clone https://github.com/reselbob/environmentsensor.git`
 
+## Go to the working directory
+
+`cd environmentsensor`
+
 ## Install the dependencies
 
 `npm install`
