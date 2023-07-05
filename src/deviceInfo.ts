@@ -1,6 +1,6 @@
 import {cpuTemperature, get, Systeminformation} from "systeminformation";
 export class DeviceInfo {
-    static async getCPUTemperature(): Promise<TempData> {
+    static async getCPUTemperature(): Promise<TemperatureData> {
         const temp: Systeminformation.CpuTemperatureData = await cpuTemperature();
         return {
             data: temp, timeStamp: new Date()
@@ -18,7 +18,12 @@ export class DeviceInfo {
 
 }
 
-export interface TempData {
+export interface TemperatureData {
     data: Systeminformation.CpuTemperatureData,
+    timeStamp: Date;
+}
+
+export interface GeneralData {
+    data: any,
     timeStamp: Date;
 }

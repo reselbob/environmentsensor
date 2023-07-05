@@ -1,14 +1,14 @@
 import { URL } from 'url';
 import axios from 'axios';
 import {AxiosError} from 'axios';
-import {TempData} from "./deviceInfo";
-interface DispatchParams {
-    payload: Array<TempData>;
+import {TemperatureData} from "./deviceInfo";
+interface DispatchParams<T> {
+    payload: Array<T>;
     targetUrl: URL;
 }
 
 export class Dispatcher {
-    static async dispatch({payload, targetUrl}: DispatchParams): Promise<void>{
+    static async dispatch<T>({payload, targetUrl}: DispatchParams<T>): Promise<void>{
             try {
                 console.log('Posting:', payload);
                 const response = await axios.post(targetUrl.href, payload);
