@@ -1,0 +1,5 @@
+package:
+  imageName: microservice
+  imageIndexFilePath: ./build/index.js
+  outputFolder: ./build
+
