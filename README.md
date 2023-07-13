@@ -61,10 +61,3 @@ The `dispatch_runner` can report cpu temperature when running on non-virtual, ph
 **Step 5:** Start the `dispatch_runner` to start emitting information about the cpu temperature on the host computer:
 
 `ts-node src/dispatch_runner.ts`
-
-
-
-
-```text
-DEVICE_INFO_TYPE=TEMPERATURE
-```
