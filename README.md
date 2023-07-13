@@ -25,10 +25,19 @@ This project has two components, a Dispatcher which gathers environment informat
 
 `ts-node tests/mockServer.ts`
 
-## (6) Start the Dispatcher that reports CPU Temperature data to the mock server
+## (6) Start the `dispatch_runner` that reports environment data to the mock server
 
 Run the following command in a separate terminal window.
 
 `cd environmentsensor`
 
-`ts-node src/index.ts`
+`ts-node src/dispatch_runner.ts`
+
+
+# Setting the `dispatch_runner` to report cpu temperature
+
+The `dispatch_runner` can report cpu temperature when running on non-virtual, physical hardware. To configure the `dispatch_runner` to report temperature set the environment variable  in the `.env` file as follows:
+
+```text
+DEVICE_INFO_TYPE=TEMPERATURE
+```
