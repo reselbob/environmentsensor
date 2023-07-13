@@ -42,13 +42,21 @@ The `dispatch_runner` can report cpu temperature when running on non-virtual, ph
 
 `nano .env`
 
+---
+
 **Step 2:** Add copy and past the following line into the file `.env`
 
 `DEVICE_INFO_TYPE=TEMPERATURE`
 
+---
+
 **Step 3:** Strike the `ctrl+o` keys to save the file's content.
 
+---
+
 **Step 4:** Strike the `ctrl+x` keys to exit nano.
+
+---
 
 **Step 5:** Start the `dispatch_runner` to start emitting information about the cpu temperature on the host computer:
 
