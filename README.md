@@ -36,7 +36,26 @@ Run the following command in a separate terminal window.
 
 # Setting the `dispatch_runner` to report cpu temperature
 
-The `dispatch_runner` can report cpu temperature when running on non-virtual, physical hardware. To configure the `dispatch_runner` to report temperature set the environment variable  in the `.env` file as follows:
+The `dispatch_runner` can report cpu temperature when running on non-virtual, physical hardware. To configure the `dispatch_runner` to report temperature, do the following in the root of the source code working directory:
+
+**Step 1:** In a terminal window run the following command to open a file named `.env` in the nano text editor:
+
+`nano .env`
+
+**Step 2:** Add copy and past the following line into the file `.env`
+
+`DEVICE_INFO_TYPE=TEMPERATURE`
+
+**Step 3:** Strike the `ctrl+o` keys to save the file's content.
+
+**Step 4:** Strike the `ctrl+x` keys to exit nano.
+
+**Step 5:** Start the `dispatch_runner` to start emitting information about the cpu temperature on the host computer:
+
+`ts-node src/dispatch_runner.ts`
+
+
+
 
 ```text
 DEVICE_INFO_TYPE=TEMPERATURE
