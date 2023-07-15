@@ -1,8 +1,6 @@
 import Router from 'router';
 import queryString from 'query-string';
-import Q from 'q';
-import { env } from './helper';
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 const app = Router({
     mergeParams: true,
@@ -11,7 +9,7 @@ const app = Router({
 mimikModule.exports = (context, req, res) => {
     global.context = context;
     app(req, res, (e) => {
-        res.end(JSON.stringify({ code: e ? 400 : 404, message: e || 'Not Found' }));
+        res.end(JSON.stringify({code: e ? 400 : 404, message: e || 'Not Found'}));
     });
 };
 
@@ -25,20 +23,30 @@ const getData = () => {
     return values
 }
 
-app.get('/:count', (request, response) => {
-    const cnt = req.params.count;
-    // TODO make sure the value of count is an integer
-    const elements = getData().slice(cnt * -1)
-    response.end(JSON.stringify(elements, NULL, 2));
+app.get('/ping', (request, response) => {
+    const obj = {ping: `The current date is ${new Date()}`}
+    response.end(JSON.stringify(obj, null, 2));
 });
 
 
 app.get('/', (request, response) => {
-    response.end(JSON.stringify(getData(), null, 2))
+    const query = queryString.parse(request._parsedUrl.query);
+
+    if (query && query.count) {
+        const cnt = Number(query.count); // Assume 'count' is expected to be a number
+        if (isNaN(cnt)) {
+            // Invalid data type: 'age' is not a number
+            return response.status(400).json({error: 'Invalid data type for query string parameter: count'});
+        }
+        const elements = getData().slice(cnt * -1)
+        response.end(JSON.stringify(elements, null, 2));
+    } else {
+        response.end(JSON.stringify(getData(), null, 2))
+    }
 });
 
 app.post('/', (request, response) => {
-    const { val } = JSON.parse(request.body);
+    const {val} = JSON.parse(request.body);
     const uuid = uuidv4();
     context.storage.setItem(uuid, val);
     response.end(`Value stored successfully with key: ${uuid}.`);
