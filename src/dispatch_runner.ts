@@ -29,9 +29,9 @@ async function getDeviceTemperature() {
 async function getDeviceInfo() {
     setInterval(async () => {
         // Place your logic or tasks here
-        const temp = await DeviceInfo.getGeneralInfo()
-        genData.push(temp);
-        console.log(temp);
+        const info = await DeviceInfo.getGeneralInfo()
+        genData.push(info);
+        console.log(info);
     }, parseInt(GET_INFO_INTERVAL_MILLISECONDS));
 }
 
@@ -46,8 +46,9 @@ async function dispatchDeviceTemperature() {
 async function dispatchDeviceInfo() {
     setInterval(async () => {
         const payload = catArray(genData)
-        console.log(`Dispatch: ${payload}`);
-        await Dispatcher.dispatch({payload, targetUrl: TARGET_URL})
+        //console.log(`Dispatch: ${payload}`);
+        console.log(`TARGET_URL: ${TARGET_URL}`);
+        //await Dispatcher.dispatch({payload, targetUrl: TARGET_URL})
     }, parseInt(REPORT_TO_SERVER_INTERVAL_MILLISECONDS));
 }
 
