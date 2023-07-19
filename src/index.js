@@ -1,6 +1,6 @@
 import Router from 'router';
 import queryString from 'query-string';
-import {v4 as uuidv4} from 'uuid';
+import {generate} from "./lib/uuid";
 
 const app = Router({
     mergeParams: true,
@@ -48,7 +48,7 @@ app.get('/', (request, response) => {
 app.post('/', (request, response) => {
     try {
         const {val} = JSON.parse(request.body);
-        const uuid = uuidv4();
+        const uuid = generate();
         context.storage.setItem(uuid, val);
         response.end(`Value stored successfully with key: ${uuid}.`);
     } catch (error) {
