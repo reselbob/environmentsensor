@@ -11,9 +11,9 @@ export class Dispatcher {
     static async dispatch<T>({payload, targetUrl}: DispatchParams<T>): Promise<void>{
             try {
                 console.log('TARGET_URL: ', targetUrl);
-                console.log('Posting:', payload);
-                const response = await axios.post(targetUrl.href, payload);
-                console.log('Response:', response.data);
+                //console.log('Posting:', payload);
+                //const response = await axios.post(targetUrl.href, payload);
+                //console.log('Response:', response.data);
             } catch (error) {
                 if (axios.isAxiosError(error)) {
                     // Handle Axios-related errors
