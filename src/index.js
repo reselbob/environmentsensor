@@ -47,10 +47,10 @@ app.get('/', (request, response) => {
 
 app.post('/', (request, response) => {
     try {
-        //const {val} = JSON.parse(request.body);
-        const val = request.body;
+        const val = JSON.parse(request.body);
+        //const val = request.body;
         const uuid = generate();
-        context.storage.setItem(uuid, val);
+        context.storage.setItem(uuid, JSON.stringify(val));
         response.end(`Value stored successfully with key: ${uuid}.`);
     } catch (error) {
         // Handle the error that occurred during parsing
