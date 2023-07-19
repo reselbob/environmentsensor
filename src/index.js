@@ -47,7 +47,8 @@ app.get('/', (request, response) => {
 
 app.post('/', (request, response) => {
     try {
-        const {val} = JSON.parse(request.body);
+        //const {val} = JSON.parse(request.body);
+        const val = request.body;
         const uuid = generate();
         context.storage.setItem(uuid, val);
         response.end(`Value stored successfully with key: ${uuid}.`);
