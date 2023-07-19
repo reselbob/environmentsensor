@@ -18,7 +18,7 @@ const deviceData = [];
 const getData = () => {
     const values = [];
     context.storage.eachItem((key, value) => {
-        values.push(value);
+        values.push(JSON.parse(value));
     });
     return values
 }
