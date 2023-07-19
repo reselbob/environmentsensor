@@ -10,7 +10,7 @@ interface DispatchParams<T> {
 export class Dispatcher {
     static async dispatch<T>({payload, targetUrl}: DispatchParams<T>): Promise<void>{
             try {
-                console.log('TARGET_URL: ', targetUrl);
+                console.log('TARGET_URL: ', targetUrl.href);
                 //console.log('Posting:', payload);
                 //const response = await axios.post(targetUrl.href, payload);
                 //console.log('Response:', response.data);

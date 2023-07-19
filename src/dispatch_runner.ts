@@ -47,8 +47,8 @@ async function dispatchDeviceInfo() {
     setInterval(async () => {
         const payload = catArray(genData)
         //console.log(`Dispatch: ${payload}`);
-        console.log(`TARGET_URL: ${TARGET_URL}`);
-        //await Dispatcher.dispatch({payload, targetUrl: TARGET_URL})
+        //console.log(`TARGET_URL: ${TARGET_URL}`);
+        await Dispatcher.dispatch({payload, targetUrl: TARGET_URL})
     }, parseInt(REPORT_TO_SERVER_INTERVAL_MILLISECONDS));
 }
 
