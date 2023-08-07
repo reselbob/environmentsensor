@@ -13,7 +13,7 @@ const DEVICE_INFO_TYPE = process.env.DEVICE_INFO_TYPE || "GENERAL";
 const GET_INFO_INTERVAL_MILLISECONDS = process.env.GET_INFO_INTERVAL_MILLISECONDS || "1000";
 const REPORT_TO_SERVER_INTERVAL_MILLISECONDS = process.env.REPORT_TO_SERVER_INTERVAL_MILLISECONDS || "5000";
 const GET_LAST_SLICE = process.env.GET_LAST_SLICE || "3";
-const TARGET_URL = new URL(process.env.TARGET_URL || "http://localhost:8083");
+const TARGET_URL = new URL(process.env.TARGET_URL || "http://localhost:8083/info");
 const tempData = new Array<TemperatureData>();
 const genData = new Array<GeneralData>();
 
@@ -71,4 +71,9 @@ switch (DEVICE_INFO_TYPE.toUpperCase()) {
         getDeviceTemperature();
         dispatchDeviceTemperature();
         break;
+    case "ALL":
+        getDeviceInfo();
+        dispatchDeviceInfo();
+        getDeviceTemperature();
+        dispatchDeviceTemperature();
 };

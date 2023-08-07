@@ -29,7 +29,7 @@ app.get('/ping', (request, response) => {
 });
 
 
-app.get('/', (request, response) => {
+app.get('/info', (request, response) => {
     const query = queryString.parse(request._parsedUrl.query);
 
     if (query && query.count) {
@@ -45,7 +45,7 @@ app.get('/', (request, response) => {
     }
 });
 
-app.post('/', (request, response) => {
+app.post('/info', (request, response) => {
     try {
         const val = JSON.parse(request.body);
         //const val = request.body;

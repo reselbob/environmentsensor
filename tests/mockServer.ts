@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const port = process.env.SERVER_PORT || 8083;
 
-app.post("/", (req: any, res: any,) => {
+app.post("/info", (req: any, res: any,) => {
     // Get the JSON data from the request body
     const data = req.body;
 
