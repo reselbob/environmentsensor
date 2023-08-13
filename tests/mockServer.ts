@@ -3,7 +3,14 @@ import express from "express";
 import {logger} from "../src/logger"
 const app = express();
 
-
+/**
+ * This is a HTTP server that can be used for testing the
+ * code in the dispatch_runner.ts file. The server is an emulation
+ * of the edgeEngine microservice. However, the mock server does not
+ * provide the serverless functionality the is implemented in
+ * the deviceinformation microservice. Thus, there is no support for
+ * the edgeEngine context object or internal storage.
+ */
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())

@@ -1,3 +1,8 @@
+/**
+ * This function returns a UUID in manner that is compliant
+ * with the operation of the edgeEngine runtime.
+ * @returns {string}
+ */
 function generate() {
     /* eslint-disable */
     const lut = []; for (let i = 0; i < 256; i++) {

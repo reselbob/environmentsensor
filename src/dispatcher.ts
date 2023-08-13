@@ -7,10 +7,19 @@ interface DispatchParams<T> {
     targetUrl: URL;
 }
 
+/**
+ * This class implements dispatch behavior to
+ * an external service
+ */
 export class Dispatcher {
+    /**
+     * The class method that executes dispatch behavior
+     * @param payload, the data in JSON format to dispatch
+     * @param targetUrl, the URL of the external service receiving
+     * the payload data
+     */
     static async dispatch<T>({payload, targetUrl}: DispatchParams<T>): Promise<void>{
             try {
-                //console.log('TARGET_URL: ', targetUrl.href);
                 console.log('Posting:', payload);
                 const response = await axios.post(targetUrl.href, payload);
                 console.log('Response:', response.data);
